@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 연봉 실수령액 계산기 · 미국주식 배당 복리 계산기 | 자본의 이면</title>
+<meta name="description" content="2026년 4대보험·근로소득세를 반영한 연봉 실수령액과 미국주식 배당금·복리 수익을 한 화면에서 계산합니다. 배당소득세 15.4% 반영, 연도별 차트와 연봉별 실수령액 비교표 제공.">
+<meta name="keywords" content="연봉 실수령액 계산기, 2026 연봉 실수령액, 4대보험 계산기, 미국주식 배당금 계산기, 배당 복리 계산기, 배당소득세 15.4%, 미국 배당주, 월 배당금">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0f1c33">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%F0%9F%A7%AE%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph / SNS 공유 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="자본의 이면">
+<meta property="og:title" content="2026 연봉 실수령액 계산기 · 미국주식 배당 복리 계산기">
+<meta property="og:description" content="4대보험과 소득세를 반영한 월 실수령액, 배당소득세 15.4%를 뺀 세후 배당금과 복리 성장을 연도별 차트로 확인하세요.">
+<meta property="og:url" content="https://sloworbit123-hub.github.io/finance-calc-tool/">
+<meta property="og:image" content="https://sloworbit123-hub.github.io/finance-calc-tool/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 연봉 실수령액 계산기 · 미국주식 배당 복리 계산기">
+<meta name="twitter:description" content="4대보험·소득세 반영 월 실수령액과 배당소득세 15.4% 반영 세후 배당금을 무료로 계산.">
+<meta name="twitter:image" content="https://sloworbit123-hub.github.io/finance-calc-tool/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "2026 연봉 실수령액 계산기 · 미국주식 배당 복리 계산기",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "ko-KR",
+      "description": "2026년 4대보험·근로소득세를 반영한 월 실수령액 계산기와 미국주식 배당금·복리 계산기.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "연봉 실수령액은 어떻게 계산하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "연봉(총급여)에서 근로자 부담 4대보험료(국민연금 4.75%, 건강보험 3.595%, 장기요양보험은 건강보험료의 13.14%, 고용보험 0.9%)와 근로소득세, 지방소득세 10%를 뺀 금액이 월 실수령액입니다. 근로소득세는 근로소득공제·기본공제·연금보험료공제·건강보험료 공제와 근로소득세액공제를 반영해 계산합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "국민연금이 연봉이 높아도 계속 늘어나나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아닙니다. 국민연금은 기준소득월액 상한(2026년 7월~2027년 6월 659만 원)까지만 부과되므로 월급이 그보다 많아도 근로자 부담은 월 313,025원에서 멈춥니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "미국 배당금에는 세금이 얼마나 붙나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "미국에서 배당소득의 15%를 먼저 원천징수하고, 국내에서 지방소득세를 포함해 총 15.4% 부담으로 정산되는 경우가 일반적입니다. 이 계산기는 배당금에서 15.4%를 뺀 세후 금액으로 복리를 계산합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "배당 재투자와 환율은 어떻게 반영되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "배당금은 매년 말 보유 평가액에 연 배당률을 곱해 지급되는 것으로 보고, 재투자를 켜면 세후 배당금이 평가액에 더해집니다. 주가는 월 단위로 복리 성장하고 환율은 투자 기간 동안 고정이라고 가정합니다."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="app">
+
+  <header class="site-head">
+    <a class="brand" href="https://blog.naver.com/hahuha844" target="_blank" rel="noopener">
+      <span class="brand-dot"></span>
+      <span class="brand-name">자본의 이면</span>
+    </a>
+    <span class="brand-tag">재테크 계산기</span>
+  </header>
+
+  <!-- 상단 광고 슬롯 : 애드센스 / 애드핏 코드를 이 안에 넣으세요 -->
+  <div class="ad-slot ad-top" id="adTop" aria-label="광고 영역">
+    <!-- ▼▼ 광고 코드 시작 (구글 애드센스 &lt;ins class="adsbygoogle"&gt; 또는 카카오 애드핏 스크립트) ▼▼ -->
+    <span class="ad-label">AD</span>
+    <span class="ad-placeholder">광고 영역 · 애드센스 / 애드핏 코드 삽입 위치</span>
+    <!-- ▲▲ 광고 코드 끝 ▲▲ -->
+  </div>
+
+  <main>
+    <div class="hero">
+      <h1>2026 연봉 실수령액 · 배당 복리 계산기</h1>
+      <p>세금과 4대보험을 뺀 진짜 내 월급, 배당소득세를 뺀 진짜 배당금을 숫자로 확인하세요.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="계산기 선택">
+      <button type="button" class="tab is-active" id="tabSalary" role="tab" aria-selected="true" aria-controls="panelSalary" data-tab="salary">
+        <span class="tab-ico">💰</span> 연봉 실수령액
+      </button>
+      <button type="button" class="tab" id="tabDividend" role="tab" aria-selected="false" aria-controls="panelDividend" data-tab="dividend">
+        <span class="tab-ico">📈</span> 배당 복리
+      </button>
+    </div>
+
+    <!-- ================= 탭 1 : 연봉 실수령액 ================= -->
+    <section class="panel is-active" id="panelSalary" role="tabpanel" aria-labelledby="tabSalary">
+      <div class="card">
+        <h2 class="card-title">내 연봉 입력</h2>
+        <div class="field">
+          <label for="salaryInput">연봉 (세전, 만원)</label>
+          <div class="input-wrap">
+            <input type="number" id="salaryInput" inputmode="numeric" min="0" max="100000" step="100" value="5000" aria-describedby="salaryHint">
+            <span class="unit">만원</span>
+          </div>
+          <p class="hint" id="salaryHint">예: 5,000만원 → 5000 입력 (비과세 수당 제외)</p>
+        </div>
+        <div class="chips" role="group" aria-label="연봉 빠른 선택">
+          <button type="button" class="chip" data-salary="3000">3,000만</button>
+          <button type="button" class="chip" data-salary="4000">4,000만</button>
+          <button type="button" class="chip" data-salary="5000">5,000만</button>
+          <button type="button" class="chip" data-salary="6000">6,000만</button>
+          <button type="button" class="chip" data-salary="8000">8,000만</button>
+          <button type="button" class="chip" data-salary="10000">1억</button>
+        </div>
+
+        <div class="field">
+          <span class="field-label" id="familyLabel">부양가족 수 (본인 포함)</span>
+          <div class="segmented" id="familyGroup" role="group" aria-labelledby="familyLabel">
+            <button type="button" class="seg is-active" data-family="1" aria-pressed="true">1명</button>
+            <button type="button" class="seg" data-family="2" aria-pressed="false">2명</button>
+            <button type="button" class="seg" data-family="3" aria-pressed="false">3명</button>
+            <button type="button" class="seg" data-family="4" aria-pressed="false">4명</button>
+            <button type="button" class="seg" data-family="5" aria-pressed="false">5명</button>
+            <button type="button" class="seg" data-family="6" aria-pressed="false">6명+</button>
+          </div>
+          <p class="hint">6명 이상은 6명으로 계산합니다.</p>
+        </div>
+
+        <label class="check check-line">
+          <input type="checkbox" id="stdCreditInput" checked>
+          <span>표준세액공제 13만원 반영 (다른 세액공제가 없을 때)</span>
+        </label>
+      </div>
+
+      <div class="result" id="salaryResult" aria-live="polite">
+        <div class="result-main">
+          <span class="result-label">월 실수령액</span>
+          <strong class="result-value" id="netMonthly">—</strong>
+          <span class="result-sub" id="netYearly">—</span>
+        </div>
+        <div class="result-grid">
+          <div class="stat">
+            <span class="stat-label">월 공제 합계</span>
+            <strong class="stat-value" id="totalDeduction">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">4대보험 (월)</span>
+            <strong class="stat-value" id="insuranceMonthly">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">소득세+지방세 (월)</span>
+            <strong class="stat-value" id="taxMonthly">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">실효세율 <span class="stat-unit">(소득세)</span></span>
+            <strong class="stat-value" id="effectiveRate">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">공제 내역 <span class="card-title-sub">월 급여 기준</span></h2>
+        <ul class="breakdown" id="salaryBreakdown">
+          <li class="bd-row"><span class="bd-name">세전 월급</span><span class="bd-val" data-k="gross">—</span></li>
+          <li class="bd-row"><span class="bd-name">국민연금 <em>4.75%</em></span><span class="bd-val" data-k="pension">—</span></li>
+          <li class="bd-row"><span class="bd-name">건강보험 <em>3.595%</em></span><span class="bd-val" data-k="health">—</span></li>
+          <li class="bd-row"><span class="bd-name">장기요양보험 <em>건강보험료의 13.14%</em></span><span class="bd-val" data-k="ltc">—</span></li>
+          <li class="bd-row"><span class="bd-name">고용보험 <em>0.9%</em></span><span class="bd-val" data-k="employment">—</span></li>
+          <li class="bd-row"><span class="bd-name">근로소득세</span><span class="bd-val" data-k="incomeTax">—</span></li>
+          <li class="bd-row"><span class="bd-name">지방소득세 <em>소득세의 10%</em></span><span class="bd-val" data-k="localTax">—</span></li>
+          <li class="bd-row bd-total"><span class="bd-name">공제 합계</span><span class="bd-val" data-k="total">—</span></li>
+          <li class="bd-row bd-net"><span class="bd-name">실수령액</span><span class="bd-val" data-k="net">—</span></li>
+        </ul>
+        <details class="tax-detail">
+          <summary>소득세 계산 과정 보기</summary>
+          <ul class="breakdown breakdown-small" id="taxSteps">
+            <li class="bd-row"><span class="bd-name">연 총급여</span><span class="bd-val" data-k="grossYear">—</span></li>
+            <li class="bd-row"><span class="bd-name">근로소득공제</span><span class="bd-val" data-k="earnedDed">—</span></li>
+            <li class="bd-row"><span class="bd-name">기본공제</span><span class="bd-val" data-k="personalDed">—</span></li>
+            <li class="bd-row"><span class="bd-name">국민연금·건강보험료 공제</span><span class="bd-val" data-k="insuranceDed">—</span></li>
+            <li class="bd-row"><span class="bd-name">과세표준</span><span class="bd-val" data-k="taxBase">—</span></li>
+            <li class="bd-row"><span class="bd-name">산출세액 <em>기본세율 8구간</em></span><span class="bd-val" data-k="calcTax">—</span></li>
+            <li class="bd-row"><span class="bd-name">근로소득세액공제</span><span class="bd-val" data-k="earnedCredit">—</span></li>
+            <li class="bd-row"><span class="bd-name">표준세액공제</span><span class="bd-val" data-k="stdCredit">—</span></li>
+            <li class="bd-row bd-total"><span class="bd-name">연간 소득세</span><span class="bd-val" data-k="taxYear">—</span></li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">연봉별 월 실수령액 비교 <span class="card-title-sub">본인 1인 · 표준세액공제 기준</span></h2>
+        <div class="table-scroll">
+          <table class="mini-table" id="salaryTable">
+            <thead>
+              <tr><th scope="col">연봉</th><th scope="col">월 실수령</th><th scope="col">월 공제</th><th scope="col">실효세율</th></tr>
+            </thead>
+            <tbody><!-- 앱이 채웁니다 --></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="note">
+        2026년 요율 기준 참고용 계산입니다. 국민연금 기준소득월액 상·하한(41만~659만원, 2026.7~2027.6), 건강보험 7.19%, 장기요양 13.14%, 고용보험 실업급여분 0.9%를 적용했습니다.
+        실제 급여명세서 금액은 회사 규정(비과세 수당, 상여 지급 시기, 연말정산 결과)에 따라 달라질 수 있습니다. 실효세율은 소득세와 지방소득세가 연봉에서 차지하는 비율입니다.
+      </p>
+    </section>
+
+    <!-- ================= 탭 2 : 배당 복리 ================= -->
+    <section class="panel" id="panelDividend" role="tabpanel" aria-labelledby="tabDividend" hidden>
+      <div class="card">
+        <h2 class="card-title">투자 조건 입력</h2>
+        <div class="field-row">
+          <div class="field">
+            <label for="initialInput">초기 투자금 (만원)</label>
+            <div class="input-wrap">
+              <input type="number" id="initialInput" inputmode="numeric" min="0" max="1000000" step="100" value="1000">
+              <span class="unit">만원</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="monthlyInput">월 적립금 (만원)</label>
+            <div class="input-wrap">
+              <input type="number" id="monthlyInput" inputmode="numeric" min="0" max="100000" step="10" value="50">
+              <span class="unit">만원</span>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="divYieldInput">연 배당률 (%)</label>
+            <div class="input-wrap">
+              <input type="number" id="divYieldInput" inputmode="decimal" min="0" max="30" step="0.1" value="3">
+              <span class="unit">%</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="growthInput">연 주가상승률 (%)</label>
+            <div class="input-wrap">
+              <input type="number" id="growthInput" inputmode="decimal" min="0" max="40" step="0.1" value="7">
+              <span class="unit">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="yearsInput">투자 기간 (년)</label>
+            <div class="input-wrap">
+              <input type="number" id="yearsInput" inputmode="numeric" min="1" max="40" step="1" value="20">
+              <span class="unit">년</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fxInput">환율 (원/달러)</label>
+            <div class="input-wrap">
+              <input type="number" id="fxInput" inputmode="decimal" min="500" max="3000" step="10" value="1380">
+              <span class="unit">원</span>
+            </div>
+          </div>
+        </div>
+        <label class="check check-line">
+          <input type="checkbox" id="reinvestInput" checked>
+          <span>배당금 재투자 (복리)</span>
+        </label>
+      </div>
+
+      <div class="result" id="dividendResult" aria-live="polite">
+        <div class="result-main">
+          <span class="result-label">최종 평가금액</span>
+          <strong class="result-value" id="finalValue">—</strong>
+          <span class="result-sub" id="finalValueUsd">—</span>
+        </div>
+        <div class="result-grid">
+          <div class="stat">
+            <span class="stat-label">세후 월 배당금</span>
+            <strong class="stat-value" id="netMonthlyDiv">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">세후 연 배당금</span>
+            <strong class="stat-value" id="netYearlyDiv">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">총 수익금</span>
+            <strong class="stat-value" id="profitValue">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">총 수익률</span>
+            <strong class="stat-value" id="profitRate">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">연도별 성장 <span class="card-title-sub">막대 = 평가금액, 선 = 세후 연 배당금</span></h2>
+        <div class="chart-wrap">
+          <canvas id="growthChart" role="img" aria-label="연도별 평가금액과 세후 배당금 차트"></canvas>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><i class="legend-bar"></i> 평가금액</span>
+          <span class="legend-item"><i class="legend-line"></i> 세후 연 배당금</span>
+          <span class="legend-note">배당소득세 15.4% 반영 · 단위 원</span>
+        </div>
+        <details class="table-detail">
+          <summary>연도별 상세 표 보기</summary>
+          <div class="table-scroll">
+            <table class="mini-table" id="growthTable">
+              <thead>
+                <tr><th scope="col">연차</th><th scope="col">평가금액</th><th scope="col">세후 배당금</th><th scope="col">누적 원금</th></tr>
+              </thead>
+              <tbody><!-- 앱이 채웁니다 --></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <p class="note">
+        배당금은 매년 말 보유 평가액에 연 배당률을 곱해 지급되는 것으로 단순화했고, 미국 배당소득세 15.4%(지방소득세 포함)를 뺀 세후 금액으로 계산했습니다.
+        주가는 월 단위로 복리 성장하며 환율은 투자 기간 동안 고정이라고 가정합니다. 실제 수익은 환율·종목·배당 정책에 따라 크게 달라질 수 있는 참고용 값입니다.
+      </p>
+    </section>
+
+        <section class="faq" aria-labelledby="faqTitle">
+      <h2 class="faq-title" id="faqTitle">자주 묻는 질문</h2>
+      <div class="faq-item">
+        <h3>연봉 실수령액은 어떻게 계산하나요?</h3>
+        <p>연봉(총급여)에서 근로자 부담 4대보험료와 근로소득세, 지방소득세를 뺀 금액입니다. 2026년 근로자 부담률은 국민연금 4.75%, 건강보험 3.595%, 장기요양보험(건강보험료의 13.14%, 보수의 약 0.4724%), 고용보험 0.9%로 합계 약 9.72%이고, 여기에 소득세와 그 10%인 지방소득세가 붙습니다. 이 계산기는 근로소득공제·기본공제·보험료 공제·근로소득세액공제까지 반영합니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>국민연금은 연봉이 높아도 계속 늘어나나요?</h3>
+        <p>아닙니다. 국민연금은 기준소득월액 상한까지만 부과됩니다. 2026년 7월부터 2027년 6월까지 상한이 659만 원이라 월급이 그보다 많아도 근로자 부담은 월 313,020원에서 멈춥니다. 연봉이 오를수록 4대보험 부담률이 조금씩 낮아지는 이유입니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>미국 배당금에는 세금이 얼마나 붙나요?</h3>
+        <p>미국에서 배당소득의 15%를 먼저 원천징수하고, 국내에서 지방소득세를 포함해 총 15.4% 부담으로 정산되는 경우가 일반적입니다. 이 계산기는 배당금에서 15.4%를 뺀 세후 금액으로 복리를 계산합니다. ISA·연금저축처럼 과세가 이연되거나 분리과세되는 절세 계좌는 이 계산기보다 세금이 적습니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3>배당 재투자와 환율은 어떻게 반영되나요?</h3>
+        <p>배당금은 매년 말 보유 평가액에 연 배당률을 곱해 지급되는 것으로 보고, 재투자를 켜면 세후 배당금이 그대로 평가액에 더해집니다. 주가는 월 단위로 복리 성장하고 환율은 투자 기간 동안 고정이라고 가정하므로, 실제 수익은 환율과 종목에 따라 달라집니다.</p>
+      </div>
+    </section>
+
+    <section class="cta" aria-label="자본의 이면 채널">
+      <h2 class="cta-title">숫자 뒤의 경제 이야기</h2>
+      <p class="cta-desc">금리·환율·배당이 내 생활을 어떻게 바꾸는지, 데이터로 읽어 정리합니다.</p>
+      <div class="cta-btns">
+        <a class="cta-btn cta-blog" href="https://blog.naver.com/hahuha844" target="_blank" rel="noopener">
+          <span class="cta-btn-ico">📝</span>
+          <span class="cta-btn-text"><b>네이버 블로그</b><small>자본의 이면 글 보기</small></span>
+        </a>
+        <a class="cta-btn cta-youtube" href="https://www.youtube.com/channel/UC58yckv4c4rIWlrVfRuz23Q" target="_blank" rel="noopener">
+          <span class="cta-btn-ico">▶</span>
+          <span class="cta-btn-text"><b>유튜브 채널</b><small>자본의 이면 영상 보기</small></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 광고 슬롯 : 애드센스 / 애드핏 코드를 이 안에 넣으세요 -->
+  <div class="ad-slot ad-bottom" id="adBottom" aria-label="광고 영역">
+    <!-- ▼▼ 광고 코드 시작 (구글 애드센스 &lt;ins class="adsbygoogle"&gt; 또는 카카오 애드핏 스크립트) ▼▼ -->
+    <span class="ad-label">AD</span>
+    <span class="ad-placeholder">광고 영역 · 애드센스 / 애드핏 코드 삽입 위치</span>
+    <!-- ▲▲ 광고 코드 끝 ▲▲ -->
+  </div>
+
+  <footer class="site-foot">
+    <p>© 자본의 이면 · 본 계산기는 참고용이며 법적 효력이 없습니다.</p>
+    <p class="foot-small">세율·보험료율은 2026년 기준이며, 제도 변경 시 <code>calc.js</code> 상단 상수에서 수정할 수 있습니다.</p>
+  </footer>
+</div>
+
+<script src="calc.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
